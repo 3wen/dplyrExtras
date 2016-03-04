@@ -59,6 +59,14 @@ eval.string.dplyr(.data,"summarise", ...)
 s_group_by = function(.data, ...) {
 eval.string.dplyr(.data,"group_by", ...)
 }
+
+#' Modified version of dplyr's rename that uses string arguments
+#' @param .data the data frame (or similar object)
+#' @param ... string version of arguments to original dplyr function
+#' @export
+s_rename = function(.data, ...) {
+  eval.string.dplyr(.data,"rename", ...)
+}
  
 # Internal function used by s_filter, s_select etc.
 eval.string.dplyr = function(.data, .fun.name, ...) {
